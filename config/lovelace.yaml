@@ -1,0 +1,6 @@
+title: My Home
+views:
+  - title: "1st Floor"
+    panel: true
+    path: first-floor
+    icon: mdi:home

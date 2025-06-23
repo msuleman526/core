@@ -1,0 +1,51 @@
+{
+  "version": 2,
+  "minor_version": 1,
+  "key": "person",
+  "data": {
+    "items": [
+      {
+        "id": "muhammad_suleman",
+        "name": "M Suleman",
+        "user_id": "013da6a201c044e8a4d516cc27ff1c2a",
+        "device_trackers": [],
+        "picture": "/api/image/serve/42dcf7fb8c01762666b5b8eefcc22f25/512x512"
+      },
+      {
+        "id": "test_user",
+        "name": "Test User",
+        "device_trackers": [],
+        "user_id": "f48e755e7846462c9b9b534a473f6bf3",
+        "picture": null
+      },
+      {
+        "id": "user_1",
+        "name": "User 1",
+        "device_trackers": [],
+        "user_id": null,
+        "picture": null
+      },
+      {
+        "id": "user_2",
+        "name": "User 2",
+        "device_trackers": [],
+        "user_id": null,
+        "picture": null
+      },
+      {
+        "id": "user_3",
+        "name": "User 3",
+        "device_trackers": [],
+        "user_id": null,
+        "picture": null
+      },
+      {
+        "id": "user_4",
+        "name": "User 4",
+        "device_trackers": [],
+        "user_id": null,
+        "picture": null
+      }
+    ]
+  }
+}

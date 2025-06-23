@@ -1,0 +1,31 @@
+# Add this section to your configuration.yaml
+
+input_text:
+  dashboard_2d_panel:
+    name: "Dashboard 2D Panel Settings"
+    max: 10000
+    initial: "{}"
+  dashboard_3d_plan:
+    name: "Dashboard 3D Plan Settings"
+    max: 10000
+    initial: "{}"
+  dashboard_thermostat:
+    name: "Dashboard Thermostat Settings"
+    max: 255
+    initial: "{}"
+  dashboard_lights:
+    name: "Dashboard Lights Settings"
+    max: 255
+    initial: "{}"
+  dashboard_covers:
+    name: "Dashboard Covers Settings"
+    max: 255
+    initial: "{}"
+  dashboard_media:
+    name: "Dashboard Media Settings"
+    max: 255
+    initial: "{}"
+  dashboard_vacuum:
+    name: "Dashboard Vacuum Settings"
+    max: 255
+    initial: "{}"

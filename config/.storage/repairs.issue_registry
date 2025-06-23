@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "minor_version": 2,
+  "key": "repairs.issue_registry",
+  "data": {
+    "issues": [
+      {
+        "created": "2025-06-17T07:02:30.267409+00:00",
+        "dismissed_version": null,
+        "domain": "automation",
+        "is_persistent": true,
+        "issue_id": "automation.restore_dashboard_settings_on_start_service_not_found_dashboard_persistence.restore_settings",
+        "breaks_in_ha_version": null,
+        "data": null,
+        "is_fixable": true,
+        "issue_domain": null,
+        "learn_more_url": null,
+        "severity": "error",
+        "translation_key": "service_not_found",
+        "translation_placeholders": {
+          "service": "dashboard_persistence.restore_settings",
+          "entity_id": "automation.restore_dashboard_settings_on_start",
+          "name": "Restore Dashboard Settings on Startup",
+          "edit": "/config/automation/edit/restore_dashboard_settings_on_start"
+        }
+      }
+    ]
+  }
+}

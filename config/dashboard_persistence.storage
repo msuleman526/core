@@ -1,0 +1,11 @@
+{
+    "version": 1,
+    "settings": {
+        "input_text.dashboard_3d_plan": "{}",
+        "input_text.dashboard_2d_panel": "{}",
+        "input_text.dashboard_thermostat": "{}",
+        "input_text.dashboard_lights": "{}",
+        "input_text.dashboard_covers": "{}"
+    },
+    "last_updated": "2025-05-12T09:27:08.224877+00:00"
+}

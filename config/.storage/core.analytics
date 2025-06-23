@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "core.analytics",
+  "data": {
+    "onboarded": true,
+    "preferences": {
+      "diagnostics": true,
+      "statistics": true,
+      "base": true,
+      "usage": true
+    },
+    "uuid": "ced0c0137bcd4e5198db92df3e155b59"
+  }
+}

@@ -1,0 +1,33 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Device is already configured",
+            "reauth_successful": "Re-authentication was successful"
+        },
+        "error": {
+            "invalid_auth": "Invalid authentication",
+            "unknown": "Unexpected error"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "email": "Email",
+                    "password": "Password"
+                }
+            }
+        }
+    },
+    "entity": {
+        "light": {
+            "light": {
+                "name": "Light"
+            }
+        }
+    },
+    "issues": {
+        "deprecated_integration": {
+            "description": "The Linear Garage Door integration will be removed as it has been replaced by the [Nice G.O.]({nice_go}) integration. Please migrate to the new integration.\n\nTo resolve this issue, please remove all Linear Garage Door entries from your configuration and add the new Nice G.O. integration. [Click here to see your existing Linear Garage Door integration entries]({entries}).",
+            "title": "The Linear Garage Door integration will be removed"
+        }
+    }
+}

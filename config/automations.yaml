@@ -1,0 +1,48 @@
+- id: 'ensure_input_text_entities_are_loaded'
+  alias: 'Ensure input_text entities are loaded after restart'
+  description: 'Makes sure input_text entities are properly loaded after Home Assistant restarts'
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - delay:
+        seconds: 10  # Wait for system to fully initialize
+    - service: input_text.reload
+    - delay: 
+        seconds: 5
+    - service: homeassistant.update_entity
+      target:
+        entity_id: 
+          - input_text.dashboard_3d_plan
+          - input_text.dashboard_2d_panel
+          - input_text.dashboard_thermostat
+          - input_text.dashboard_lights
+          - input_text.dashboard_covers
+
+- id: 'restore_dashboard_settings_on_start'
+  alias: 'Restore Dashboard Settings on Startup'
+  description: 'Restores dashboard settings from storage when Home Assistant starts'
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - delay:
+        seconds: 15  # Wait for components to fully initialize
+    - service: homeassistant.update_entity
+      target:
+        entity_id: 
+          - input_text.dashboard_3d_plan
+          - input_text.dashboard_2d_panel
+          - input_text.dashboard_thermostat
+          - input_text.dashboard_lights
+          - input_text.dashboard_covers
+    - delay:
+        seconds: 2
+    - service: dashboard_persistence.restore_settings
+      # No data needed, empty schema enforced in component
+    - delay:
+        seconds: 2
+    - service: persistent_notification.create
+      data:
+        title: "Dashboard Settings Restored"
+        message: "Dashboard settings have been restored from storage. Refresh your browser if needed."

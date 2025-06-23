@@ -1,0 +1,9 @@
+backup_settings:
+  name: Backup Dashboard Settings
+  description: Back up all dashboard settings to storage file
+  fields: {}
+
+restore_settings:
+  name: Restore Dashboard Settings
+  description: Restore dashboard settings from storage file
+  fields: {}

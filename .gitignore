@@ -105,10 +105,6 @@ virtualization/vagrant/.vagrant
 virtualization/vagrant/config
 
 # Visual Studio Code
-.vscode/*
-!.vscode/cSpell.json
-!.vscode/extensions.json
-!.vscode/tasks.json
 .env
 
 # Windows Explorer
@@ -135,3 +131,7 @@ tmp_cache
 
 # Will be created from script/split_tests.py
 pytest_buckets.txt
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore

@@ -1,0 +1,84 @@
+default_config:
+
+panel_custom:
+  - name: custom-dashboard
+    sidebar_title: "Custom Dashboard"
+    sidebar_icon: mdi:view-dashboard
+    url_path: "custom-dashboard"
+    js_url: "/static/panels/custom-dashboard.js"
+    config:
+      # Panel-specific configuration can go here
+      title: "Custom Dashboard"
+
+# Core Configuration
+homeassistant:
+  name: Home Assistant
+  # Add other core settings if needed
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+  development_repo: /Users/mohsinsherin/Projects/home-assistant/frontend
+  extra_module_url:
+    - /local/custom-redirect.js
+
+logger:
+  default: info
+  logs:
+    homeassistant.components.cloud: debug
+
+lovelace:
+  mode: storage
+
+# Custom Components
+dashboard_persistence:
+  # This enables the dashboard_persistence custom component
+
+custom_dashboard:
+  # This enables the custom_dashboard custom component
+
+# Custom Dashboard Input Text Entities
+input_text:
+  dashboard_lights:
+    name: Dashboard Lights Configuration
+    initial: "{}"
+    max: 10000
+  
+  dashboard_3d_plan:
+    name: 3D Plan Configuration
+    initial: "{}"
+    max: 10000
+  
+  dashboard_2d_panel:
+    name: 2D Panel Configuration
+    initial: "{}"
+    max: 10000
+    
+  dashboard_2d_panel_entities:
+    name: 2D Panel Entities Configuration
+    initial: "{}"
+    max: 10000
+  
+  dashboard_thermostat:
+    name: Thermostat Configuration
+    initial: "{}"
+    max: 10000
+  
+  dashboard_covers:
+    name: Covers Configuration
+    initial: "{}"
+    max: 10000
+  
+  dashboard_media:
+    name: Media Configuration
+    initial: "{}"
+    max: 10000
+  
+  dashboard_vacuum:
+    name: Vacuum Configuration
+    initial: "{}"
+    max: 10000
+
+script: !include scripts.yaml
+automation: !include automations.yaml
+scene: !include scenes.yaml

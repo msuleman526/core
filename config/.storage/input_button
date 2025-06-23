@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_button",
+  "data": {
+    "items": [
+      {
+        "id": "kitchen_fridge",
+        "name": "Kitchen Fridge"
+      },
+      {
+        "id": "light_1",
+        "name": "Light 1"
+      },
+      {
+        "id": "light_2",
+        "name": "Light 2"
+      },
+      {
+        "id": "light_3",
+        "name": "Light 3"
+      },
+      {
+        "id": "light_4",
+        "name": "Light 4"
+      },
+      {
+        "id": "bedroom_1",
+        "name": "Bedroom 1"
+      },
+      {
+        "id": "bedroom_2",
+        "name": "Bedroom 2"
+      },
+      {
+        "id": "bedroom_3",
+        "name": "Bedroom 3"
+      },
+      {
+        "id": "bedroom_4",
+        "name": "Bedroom 4"
+      },
+      {
+        "id": "main_lamp",
+        "name": "Main Lamp",
+        "icon": "mdi:alarm-light"
+      }
+    ]
+  }
+}

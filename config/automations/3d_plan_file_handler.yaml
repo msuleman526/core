@@ -1,0 +1,14 @@
+---
+# Automation to save 3D plan configuration to file
+# This allows the 3D plan settings to be shared across all devices
+alias: "Save 3D Plan Configuration"
+trigger:
+  - platform: event
+    event_type: save_3d_plan_config
+    event_data: {}
+action:
+  - service: file.write
+    data_template:
+      path: "/config/www/custom-dashboard/3d-plan-config.json"
+      content: '{{ trigger.event.data.content }}'
+      mode: "w+"

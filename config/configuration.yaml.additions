@@ -1,0 +1,71 @@
+# Home Assistant Configuration
+
+# Core Configuration
+homeassistant:
+  name: Home Assistant
+  # Add other core settings if needed
+
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+  development_repo: /Users/mohsinsherin/Projects/home-assistant/frontend
+
+logger:
+  default: info
+  logs:
+    homeassistant.components.cloud: debug
+
+lovelace:
+  mode: storage
+
+# Custom Components
+dashboard_persistence:
+  # This enables the dashboard_persistence custom component
+
+custom_dashboard:
+  # This enables the custom_dashboard custom component
+
+# Custom Dashboard Input Text Entities
+input_text:
+  dashboard_lights:
+    name: Dashboard Lights Configuration
+    initial: "{}"
+    max: 255
+  
+  dashboard_3d_plan:
+    name: 3D Plan Configuration
+    initial: "{}"
+    max: 255
+  
+  dashboard_2d_panel:
+    name: 2D Panel Configuration
+    initial: "{}"
+    max: 255
+  
+  dashboard_thermostat:
+    name: Thermostat Configuration
+    initial: "{}"
+    max: 255
+  
+  dashboard_covers:
+    name: Covers Configuration
+    initial: "{}"
+    max: 255
+
+# Include additional configuration as needed
+# You can uncomment and modify these sections based on your setup
+
+# http:
+#   # Your HTTP settings
+
+# recorder:
+#   # Database settings
+
+# logger:
+#   # Logging configuration
+
+# Include any script or automation configurations
+script: !include scripts.yaml
+automation: !include automations.yaml
