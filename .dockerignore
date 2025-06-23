@@ -1,7 +1,6 @@
 # General files
 .git
 .github
-config
 docs
 
 # Development
