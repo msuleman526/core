@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_test",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "1st Floor",
+          "panel": true
+        }
+      ]
+    }
+  }
+}

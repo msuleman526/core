@@ -1,0 +1,395 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "trace.saved_traces",
+  "data": {
+    "automation.ensure_input_text_entities_are_loaded": [
+      {
+        "extended_dict": {
+          "last_step": "action/3",
+          "run_id": "9311527417e8366b46bd616067822d8d",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-06-11T06:24:05.236944+00:00",
+            "finish": "2025-06-11T06:24:20.284496+00:00"
+          },
+          "domain": "automation",
+          "item_id": "ensure_input_text_entities_are_loaded",
+          "trigger": "Home Assistant starting",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-06-11T06:24:05.237017+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.ensure_input_text_entities_are_loaded_after_restart_2",
+                    "state": "on",
+                    "attributes": {
+                      "id": "ensure_input_text_entities_are_loaded",
+                      "last_triggered": "2025-06-03T07:34:26.224491+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Ensure input_text entities are loaded after restart"
+                    },
+                    "last_changed": "2025-06-11T06:23:55.150260+00:00",
+                    "last_reported": "2025-06-11T06:23:55.150260+00:00",
+                    "last_updated": "2025-06-11T06:23:55.150260+00:00",
+                    "context": {
+                      "id": "01JXETHN8ECZNSVARGACNYVAM5",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "homeassistant",
+                    "event": "start",
+                    "description": "Home Assistant starting"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-06-11T06:24:05.237401+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01JXETHZ3MK1RVQ36VZZD83AZW",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "delay": 10.0,
+                  "done": true
+                }
+              }
+            ],
+            "action/1": [
+              {
+                "path": "action/1",
+                "timestamp": "2025-06-11T06:24:15.240335+00:00",
+                "result": {
+                  "params": {
+                    "domain": "input_text",
+                    "service": "reload",
+                    "service_data": {},
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "action/2": [
+              {
+                "path": "action/2",
+                "timestamp": "2025-06-11T06:24:15.280723+00:00",
+                "result": {
+                  "delay": 5.0,
+                  "done": true
+                }
+              }
+            ],
+            "action/3": [
+              {
+                "path": "action/3",
+                "timestamp": "2025-06-11T06:24:20.281836+00:00",
+                "result": {
+                  "params": {
+                    "domain": "homeassistant",
+                    "service": "update_entity",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "input_text.dashboard_3d_plan",
+                        "input_text.dashboard_2d_panel",
+                        "input_text.dashboard_thermostat",
+                        "input_text.dashboard_lights",
+                        "input_text.dashboard_covers"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "ensure_input_text_entities_are_loaded",
+            "alias": "Ensure input_text entities are loaded after restart",
+            "description": "Makes sure input_text entities are properly loaded after Home Assistant restarts",
+            "trigger": {
+              "platform": "homeassistant",
+              "event": "start"
+            },
+            "action": [
+              {
+                "delay": {
+                  "seconds": 10
+                }
+              },
+              {
+                "action": "input_text.reload"
+              },
+              {
+                "delay": {
+                  "seconds": 5
+                }
+              },
+              {
+                "target": {
+                  "entity_id": [
+                    "input_text.dashboard_3d_plan",
+                    "input_text.dashboard_2d_panel",
+                    "input_text.dashboard_thermostat",
+                    "input_text.dashboard_lights",
+                    "input_text.dashboard_covers"
+                  ]
+                },
+                "action": "homeassistant.update_entity"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JXETHZ3MK1RVQ36VZZD83AZW",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/3",
+          "run_id": "9311527417e8366b46bd616067822d8d",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-06-11T06:24:05.236944+00:00",
+            "finish": "2025-06-11T06:24:20.284496+00:00"
+          },
+          "domain": "automation",
+          "item_id": "ensure_input_text_entities_are_loaded",
+          "trigger": "Home Assistant starting"
+        }
+      }
+    ],
+    "automation.restore_dashboard_settings_on_start": [
+      {
+        "extended_dict": {
+          "last_step": "action/5",
+          "run_id": "c8a2ad1ad2963d604c4a6f39a2f9bc28",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-06-11T06:24:05.239171+00:00",
+            "finish": "2025-06-11T06:24:25.269314+00:00"
+          },
+          "domain": "automation",
+          "item_id": "restore_dashboard_settings_on_start",
+          "trigger": "Home Assistant starting",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-06-11T06:24:05.239323+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.restore_dashboard_settings_on_start",
+                    "state": "on",
+                    "attributes": {
+                      "id": "restore_dashboard_settings_on_start",
+                      "last_triggered": "2025-06-03T07:34:26.226012+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Restore Dashboard Settings on Startup"
+                    },
+                    "last_changed": "2025-06-11T06:23:55.150440+00:00",
+                    "last_reported": "2025-06-11T06:23:55.150440+00:00",
+                    "last_updated": "2025-06-11T06:23:55.150440+00:00",
+                    "context": {
+                      "id": "01JXETHN8ERW2Z8T85TXA6XHVS",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "homeassistant",
+                    "event": "start",
+                    "description": "Home Assistant starting"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-06-11T06:24:05.239679+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01JXETHZ3Q0R8XPF1KGXDA093H",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "delay": 15.0,
+                  "done": true
+                }
+              }
+            ],
+            "action/1": [
+              {
+                "path": "action/1",
+                "timestamp": "2025-06-11T06:24:20.240716+00:00",
+                "result": {
+                  "params": {
+                    "domain": "homeassistant",
+                    "service": "update_entity",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "input_text.dashboard_3d_plan",
+                        "input_text.dashboard_2d_panel",
+                        "input_text.dashboard_thermostat",
+                        "input_text.dashboard_lights",
+                        "input_text.dashboard_covers"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "action/2": [
+              {
+                "path": "action/2",
+                "timestamp": "2025-06-11T06:24:20.245082+00:00",
+                "result": {
+                  "delay": 2.0,
+                  "done": true
+                }
+              }
+            ],
+            "action/3": [
+              {
+                "path": "action/3",
+                "timestamp": "2025-06-11T06:24:22.245824+00:00",
+                "result": {
+                  "params": {
+                    "domain": "dashboard_persistence",
+                    "service": "restore_settings",
+                    "service_data": {},
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "action/4": [
+              {
+                "path": "action/4",
+                "timestamp": "2025-06-11T06:24:23.266474+00:00",
+                "result": {
+                  "delay": 2.0,
+                  "done": true
+                }
+              }
+            ],
+            "action/5": [
+              {
+                "path": "action/5",
+                "timestamp": "2025-06-11T06:24:25.267866+00:00",
+                "result": {
+                  "params": {
+                    "domain": "persistent_notification",
+                    "service": "create",
+                    "service_data": {
+                      "title": "Dashboard Settings Restored",
+                      "message": "Dashboard settings have been restored from storage. Refresh your browser if needed."
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "restore_dashboard_settings_on_start",
+            "alias": "Restore Dashboard Settings on Startup",
+            "description": "Restores dashboard settings from storage when Home Assistant starts",
+            "trigger": {
+              "platform": "homeassistant",
+              "event": "start"
+            },
+            "action": [
+              {
+                "delay": {
+                  "seconds": 15
+                }
+              },
+              {
+                "target": {
+                  "entity_id": [
+                    "input_text.dashboard_3d_plan",
+                    "input_text.dashboard_2d_panel",
+                    "input_text.dashboard_thermostat",
+                    "input_text.dashboard_lights",
+                    "input_text.dashboard_covers"
+                  ]
+                },
+                "action": "homeassistant.update_entity"
+              },
+              {
+                "delay": {
+                  "seconds": 2
+                }
+              },
+              {
+                "action": "dashboard_persistence.restore_settings"
+              },
+              {
+                "delay": {
+                  "seconds": 2
+                }
+              },
+              {
+                "data": {
+                  "title": "Dashboard Settings Restored",
+                  "message": "Dashboard settings have been restored from storage. Refresh your browser if needed."
+                },
+                "action": "persistent_notification.create"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JXETHZ3Q0R8XPF1KGXDA093H",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/5",
+          "run_id": "c8a2ad1ad2963d604c4a6f39a2f9bc28",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-06-11T06:24:05.239171+00:00",
+            "finish": "2025-06-11T06:24:25.269314+00:00"
+          },
+          "domain": "automation",
+          "item_id": "restore_dashboard_settings_on_start",
+          "trigger": "Home Assistant starting"
+        }
+      }
+    ]
+  }
+}

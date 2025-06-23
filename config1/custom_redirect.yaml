@@ -1,0 +1,4 @@
+# Include custom redirect script in frontend
+frontend:
+  extra_module_url:
+    - /local/custom-redirect.js

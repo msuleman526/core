@@ -1,0 +1,4 @@
+title: Home
+views:
+  - title: "1st Floor"
+    panel: true

@@ -1,0 +1,51 @@
+# Home Assistant Core Configuration
+# Add this to register the custom dashboard panel
+
+# Custom panels configuration
+panel_custom:
+  - name: custom-dashboard
+    sidebar_title: "Custom Dashboard"
+    sidebar_icon: mdi:view-dashboard
+    url_path: "custom-dashboard"
+    js_url: "/static/panels/custom-dashboard.js"
+    config:
+      # Panel-specific configuration can go here
+      title: "Custom Dashboard"
+
+# Frontend configuration (if needed)
+frontend:
+  themes: !include_dir_merge_named themes/
+  extra_module_url:
+    - /static/panels/custom-dashboard.js
+
+# Lovelace configuration (if you want to include it)
+lovelace:
+  mode: yaml
+  resources:
+    - url: /static/panels/custom-dashboard.js
+      type: module
+
+# Default configuration
+default_config:
+
+# Enable configuration UI
+config:
+
+# Enable the recorder (optional but recommended)
+recorder:
+  db_url: sqlite:///config/home-assistant_v2.db
+
+# Enable history (optional)
+history:
+
+# Enable logbook (optional)
+logbook:
+
+# Text to speech (optional)
+tts:
+  - platform: google_translate
+
+# Example automation (optional)
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml

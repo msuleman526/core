@@ -1,0 +1,54 @@
+2025-06-17 11:50:49.596 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration dashboard_persistence which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-06-17 11:50:49.598 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration custom_dashboard which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-06-17 11:50:50.463 WARNING (MainThread) [aiohttp_fast_zlib] zlib_ng and isal are not available, falling back to zlib, performance will be degraded.
+2025-06-17 11:50:51.865 ERROR (MainThread) [homeassistant.components.panel_custom] Unable to register panel Custom Dashboard: Overwriting panel custom-dashboard
+2025-06-17 11:51:14.198 WARNING (MainThread) [homeassistant.helpers.entity_component] Forced update failed. Entity input_text.dashboard_3d_plan not found.
+2025-06-17 11:51:14.199 WARNING (MainThread) [homeassistant.helpers.entity_component] Forced update failed. Entity input_text.dashboard_2d_panel not found.
+2025-06-17 11:51:14.199 WARNING (MainThread) [homeassistant.helpers.entity_component] Forced update failed. Entity input_text.dashboard_thermostat not found.
+2025-06-17 11:51:14.199 WARNING (MainThread) [homeassistant.helpers.entity_component] Forced update failed. Entity input_text.dashboard_lights not found.
+2025-06-17 11:51:14.199 WARNING (MainThread) [homeassistant.helpers.entity_component] Forced update failed. Entity input_text.dashboard_covers not found.
+2025-06-17 11:51:14.227 WARNING (MainThread) [homeassistant.helpers.entity_component] Forced update failed. Entity input_text.dashboard_3d_plan not found.
+2025-06-17 11:51:14.227 WARNING (MainThread) [homeassistant.helpers.entity_component] Forced update failed. Entity input_text.dashboard_2d_panel not found.
+2025-06-17 11:51:14.228 WARNING (MainThread) [homeassistant.helpers.entity_component] Forced update failed. Entity input_text.dashboard_thermostat not found.
+2025-06-17 11:51:14.228 WARNING (MainThread) [homeassistant.helpers.entity_component] Forced update failed. Entity input_text.dashboard_lights not found.
+2025-06-17 11:51:14.228 WARNING (MainThread) [homeassistant.helpers.entity_component] Forced update failed. Entity input_text.dashboard_covers not found.
+2025-06-17 11:51:16.204 ERROR (MainThread) [homeassistant.components.automation.restore_dashboard_settings_on_start] Restore Dashboard Settings on Startup: Error executing script. Service not found for call_service at pos 4: Action dashboard_persistence.restore_settings not found
+2025-06-17 11:52:30.273 ERROR (MainThread) [root] Uncaught exception
+Traceback (most recent call last):
+  File "/Users/mohsinsherin/Projects/home-assistant/core/venv/bin/hass", line 10, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/Users/mohsinsherin/Projects/home-assistant/core/homeassistant/__main__.py", line 213, in main
+    exit_code = runner.run(runtime_conf)
+  File "/Users/mohsinsherin/Projects/home-assistant/core/homeassistant/runner.py", line 154, in run
+    return loop.run_until_complete(setup_and_run_hass(runtime_config))
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 706, in run_until_complete
+    self.run_forever()
+    ~~~~~~~~~~~~~~~~^^
+  File "/usr/local/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 677, in run_forever
+    self._run_once()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/local/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 1996, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/usr/local/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/selectors.py", line 548, in select
+    kev_list = self._selector.control(None, max_ev, timeout)
+KeyboardInterrupt
+2025-06-17 11:52:30.439 ERROR (Dummy-5) [root] Uncaught exception
+Traceback (most recent call last):
+  File "/Users/mohsinsherin/Projects/home-assistant/core/venv/lib/python3.13/site-packages/bleak/backends/corebluetooth/CentralManagerDelegate.py", line 284, in centralManager_didDiscoverPeripheral_advertisementData_RSSI_
+    self.event_loop.call_soon_threadsafe(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.did_discover_peripheral,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        RSSI,
+        ^^^^^
+    )
+    ^
+  File "/usr/local/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 872, in call_soon_threadsafe
+    self._check_closed()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/Cellar/python@3.13/3.13.3/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 550, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed

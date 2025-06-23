@@ -1,0 +1,97 @@
+# Reset dashboard settings
+reset_dashboard_settings:
+  alias: "Reset Dashboard Settings"
+  sequence:
+    - service: input_text.set_value
+      data:
+        entity_id: input_text.dashboard_3d_plan
+        value: "{}"
+    - service: input_text.set_value
+      data:
+        entity_id: input_text.dashboard_2d_panel
+        value: "{}"
+    - service: input_text.set_value
+      data:
+        entity_id: input_text.dashboard_thermostat
+        value: "{}"
+    - service: input_text.set_value
+      data:
+        entity_id: input_text.dashboard_lights
+        value: "{}"
+    - service: input_text.set_value
+      data:
+        entity_id: input_text.dashboard_covers
+        value: "{}"
+    - service: persistent_notification.create
+      data:
+        title: "Dashboard Settings Reset"
+        message: "All dashboard settings have been reset to default values. You may need to refresh your browser."
+
+# Set default lights for dashboard
+set_default_lights:
+  alias: "Set Default Lights"
+  sequence:
+    - service: homeassistant.update_entity
+      data:
+        entity_id: "input_text.dashboard_lights"
+    - delay:
+        seconds: 1
+    - service: input_text.set_value
+      data:
+        entity_id: input_text.dashboard_lights
+        value: >
+          {"entities":["light.light1","light.light2","light.light3"]}
+    - service: persistent_notification.create
+      data:
+        title: "Default Lights Set"
+        message: "Default lights have been set for the dashboard. You may need to refresh your browser."
+
+# Reload input_text integration to ensure settings are loaded
+reload_input_text:
+  alias: "Reload Input Text Integration"
+  sequence:
+    - service: input_text.reload
+    - delay:
+        seconds: 1
+    - service: homeassistant.update_entity
+      target:
+        entity_id:
+          - input_text.dashboard_3d_plan
+          - input_text.dashboard_2d_panel
+          - input_text.dashboard_thermostat
+          - input_text.dashboard_lights
+          - input_text.dashboard_covers
+    - service: persistent_notification.create
+      data:
+        title: "Input Text Settings Reloaded"
+        message: "Dashboard settings have been reloaded. Refresh your browser if needed."
+
+# Restore dashboard settings from storage
+restore_dashboard_settings:
+  alias: "Restore Dashboard Settings"
+  sequence:
+    - service: dashboard_persistence.restore_settings
+    - delay:
+        seconds: 1
+    - service: homeassistant.update_entity
+      target:
+        entity_id:
+          - input_text.dashboard_3d_plan
+          - input_text.dashboard_2d_panel
+          - input_text.dashboard_thermostat
+          - input_text.dashboard_lights
+          - input_text.dashboard_covers
+    - service: persistent_notification.create
+      data:
+        title: "Dashboard Settings Restored"
+        message: "Dashboard settings have been restored from storage. Refresh your browser if needed."
+
+# Backup dashboard settings to storage
+backup_dashboard_settings:
+  alias: "Backup Dashboard Settings"
+  sequence:
+    - service: dashboard_persistence.backup_settings
+    - service: persistent_notification.create
+      data:
+        title: "Dashboard Settings Backed Up"
+        message: "Dashboard settings have been backed up to storage."

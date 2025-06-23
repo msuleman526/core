@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_dashboards",
+  "data": {
+    "items": [
+      {
+        "id": "dashboard_test",
+        "show_in_sidebar": true,
+        "title": "Test",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-test"
+      },
+      {
+        "id": "dashboard_ttt",
+        "show_in_sidebar": true,
+        "title": "ttt",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-ttt"
+      },
+      {
+        "id": "dashboard_ascia",
+        "show_in_sidebar": true,
+        "title": "ASCIA",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-ascia"
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_resources",
+  "data": {
+    "items": [
+      {
+        "id": "49010a4eaa6341a7a20c1ce563921623",
+        "url": "https://github.com/marrobHD/tv-card.git",
+        "type": "module"
+      }
+    ]
+  }
+}

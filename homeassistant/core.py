@@ -7,6 +7,7 @@ of entities and react to changes.
 from __future__ import annotations
 
 import asyncio
+import inspect
 from collections import UserDict, defaultdict
 from collections.abc import (
     Callable,
@@ -233,6 +234,28 @@ def valid_entity_id(entity_id: str) -> bool:
 
 def validate_state(state: str) -> str:
     """Validate a state, raise if it not valid."""
+    # Check if this is a special input_text entity that can have longer state length
+    # dashboard_* entities used for dashboard persistence can have up to 10000 characters
+    is_special_entity = False
+    current_frame = inspect.currentframe()
+    if current_frame:
+        try:
+            frame = current_frame.f_back
+            if frame and 'entity_id' in frame.f_locals:
+                entity_id = frame.f_locals['entity_id']
+                if isinstance(entity_id, str) and entity_id.startswith('input_text.dashboard_'):
+                    is_special_entity = True
+                    # For dashboard entities, allow up to 10000 characters
+                    if len(state) > 10000:
+                        raise InvalidStateError(
+                            f"Invalid state with length {len(state)}. "
+                            "Dashboard entity state max length is 10000 characters."
+                        )
+                    return state
+        finally:
+            del current_frame  # Avoid reference cycles
+    
+    # Regular validation for normal entities
     if len(state) > MAX_LENGTH_STATE_STATE:
         raise InvalidStateError(
             f"Invalid state with length {len(state)}. "

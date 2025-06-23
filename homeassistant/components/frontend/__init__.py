@@ -382,6 +382,16 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
     websocket_api.async_register_command(hass, websocket_subscribe_extra_js)
     hass.http.register_view(ManifestJSONView())
 
+    # Register custom dashboard panel
+    async_register_built_in_panel(
+        hass,
+        component_name="custom-dashboard",
+        sidebar_title="Dashboard",
+        sidebar_icon="mdi:view-dashboard",
+        frontend_url_path="custom-dashboard",
+        require_admin=False,
+    )
+
     conf = config.get(DOMAIN, {})
 
     for key in (CONF_EXTRA_HTML_URL, CONF_EXTRA_HTML_URL_ES5, CONF_JS_VERSION):

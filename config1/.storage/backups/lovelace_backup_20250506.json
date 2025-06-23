@@ -1,0 +1,179 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace",
+  "data": {
+    "config": {
+      "title": "Home",
+      "views": [
+        {
+          "title": "1st Floor",
+          "panel": true,
+          "cards": [
+            {
+              "type": "picture-elements",
+              "elements": [
+                {
+                  "type": "image",
+                  "entity": "light.bed_light",
+                  "image": "/api/image/serve/a0404f3c448c35494e2e4d524a3a0f99/512x512",
+                  "state_image": {
+                    "on": "/api/image/serve/5babced4be441708ba1072c97027e97b/512x512"
+                  },
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "hold_action": {
+                    "action": "none"
+                  },
+                  "style": {
+                    "top": "50%",
+                    "left": "50%",
+                    "width": "100%"
+                  },
+                  "device_category": "default"
+                },
+                {
+                  "type": "image",
+                  "entity": "light.ceiling_lights",
+                  "image": "/api/image/serve/3e771e8fdc8e52e3829225aa256acf22/512x512",
+                  "state_image": {
+                    "on": "/api/image/serve/929a5b64a86d14b2cea267f5683027d5/512x512"
+                  },
+                  "tap_action": {
+                    "action": "none"
+                  },
+                  "hold_action": {
+                    "action": "none"
+                  },
+                  "style": {
+                    "top": "50%",
+                    "left": "50%",
+                    "width": "100%"
+                  },
+                  "device_category": "default"
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.bed_light",
+                  "style": {
+                    "top": "27%",
+                    "left": "71%"
+                  },
+                  "device_category": "light",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "hold_action": {
+                    "action": "more-info"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "light.ceiling_lights",
+                  "style": {
+                    "top": "65%",
+                    "left": "33%"
+                  },
+                  "device_category": "light",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "hold_action": {
+                    "action": "more-info"
+                  }
+                },
+                {
+                  "type": "state-badge",
+                  "entity": "fan.ceiling_fan",
+                  "style": {
+                    "top": "20%",
+                    "left": "47%"
+                  },
+                  "device_category": "device",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "hold_action": {
+                    "action": "more-info"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "cover.garage_door",
+                  "style": {
+                    "top": "20%",
+                    "left": "27%"
+                  },
+                  "device_category": "curtain",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "hold_action": {
+                    "action": "more-info"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "climate.heatpump",
+                  "style": {
+                    "top": "16%",
+                    "left": "69%"
+                  },
+                  "device_category": "climate",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "hold_action": {
+                    "action": "more-info"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "camera.demo_camera",
+                  "style": {
+                    "top": "65%",
+                    "left": "50%"
+                  },
+                  "device_category": "camera",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "hold_action": {
+                    "action": "more-info"
+                  }
+                },
+                {
+                  "type": "state-icon",
+                  "entity": "vacuum.2_second_floor",
+                  "style": {
+                    "top": "50%",
+                    "left": "50%"
+                  },
+                  "device_category": "vacuum",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "hold_action": {
+                    "action": "more-info"
+                  }
+                }
+              ],
+              "image": "/api/image/serve/0c09cbeb99e56c46132cdd99304e8a94/512x512"
+            }
+          ]
+        },
+        {
+          "title": "2nd Floor",
+          "panel": true,
+          "path": "2nd-floor"
+        },
+        {
+          "title": "3rd Floor",
+          "panel": true,
+          "path": "3rd-floor"
+        }
+      ]
+    }
+  }
+}

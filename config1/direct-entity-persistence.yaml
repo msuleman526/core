@@ -1,0 +1,108 @@
+# Direct Entity Persistence
+
+# Description: This configuration file contains helpers to ensure settings persist across Home Assistant restarts
+
+# Backup current settings in case entities are reset
+backup_dashboard_settings:
+  alias: "Backup Dashboard Settings"
+  sequence:
+    # Create persistent notifications with settings in case they're needed for recovery
+    - service: persistent_notification.create
+      data:
+        notification_id: "backup_dashboard_3d_plan"
+        title: "3D Plan Backup"
+        message: >-
+          {{ states('input_text.dashboard_3d_plan') }}
+    - service: persistent_notification.create
+      data:
+        notification_id: "backup_dashboard_2d_panel"
+        title: "2D Panel Backup"
+        message: >-
+          {{ states('input_text.dashboard_2d_panel') }}
+    - service: persistent_notification.create
+      data:
+        notification_id: "backup_dashboard_thermostat"
+        title: "Thermostat Backup"
+        message: >-
+          {{ states('input_text.dashboard_thermostat') }}
+    - service: persistent_notification.create
+      data:
+        notification_id: "backup_dashboard_lights"
+        title: "Lights Backup"
+        message: >-
+          {{ states('input_text.dashboard_lights') }}
+    - service: persistent_notification.create
+      data:
+        notification_id: "backup_dashboard_covers"
+        title: "Covers Backup"
+        message: >-
+          {{ states('input_text.dashboard_covers') }}
+    - service: persistent_notification.create
+      data:
+        title: "Dashboard Settings Backed Up"
+        message: "Dashboard settings have been backed up to persistent notifications."
+        notification_id: "dashboard_settings_backed_up"
+
+# Verify that entities exist and have valid values
+verify_dashboard_settings:
+  alias: "Verify Dashboard Settings"
+  sequence:
+    - service: input_text.reload
+    - delay:
+        seconds: 1
+    # Check 3D Plan entity
+    - choose:
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_text.dashboard_3d_plan') == 'unknown' or states('input_text.dashboard_3d_plan') == 'unavailable' or states('input_text.dashboard_3d_plan') == '' }}"
+          sequence:
+            - service: persistent_notification.create
+              data:
+                title: "Warning: 3D Plan Settings Invalid"
+                message: "The 3D Plan settings entity has an invalid state. Check configuration.yaml."
+    # Check 2D Panel entity
+    - choose:
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_text.dashboard_2d_panel') == 'unknown' or states('input_text.dashboard_2d_panel') == 'unavailable' or states('input_text.dashboard_2d_panel') == '' }}"
+          sequence:
+            - service: persistent_notification.create
+              data:
+                title: "Warning: 2D Panel Settings Invalid"
+                message: "The 2D Panel settings entity has an invalid state. Check configuration.yaml."
+    # Check Thermostat entity
+    - choose:
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_text.dashboard_thermostat') == 'unknown' or states('input_text.dashboard_thermostat') == 'unavailable' or states('input_text.dashboard_thermostat') == '' }}"
+          sequence:
+            - service: persistent_notification.create
+              data:
+                title: "Warning: Thermostat Settings Invalid"
+                message: "The Thermostat settings entity has an invalid state. Check configuration.yaml."
+    # Check Lights entity
+    - choose:
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_text.dashboard_lights') == 'unknown' or states('input_text.dashboard_lights') == 'unavailable' or states('input_text.dashboard_lights') == '' }}"
+          sequence:
+            - service: persistent_notification.create
+              data:
+                title: "Warning: Lights Settings Invalid"
+                message: "The Lights settings entity has an invalid state. Check configuration.yaml."
+    # Check Covers entity
+    - choose:
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_text.dashboard_covers') == 'unknown' or states('input_text.dashboard_covers') == 'unavailable' or states('input_text.dashboard_covers') == '' }}"
+          sequence:
+            - service: persistent_notification.create
+              data:
+                title: "Warning: Covers Settings Invalid"
+                message: "The Covers settings entity has an invalid state. Check configuration.yaml."
+    # Success message if all entities exist
+    - service: persistent_notification.create
+      data:
+        title: "Dashboard Settings Verified"
+        message: "Dashboard settings entities exist and have valid states."
+        notification_id: "dashboard_settings_verified"
